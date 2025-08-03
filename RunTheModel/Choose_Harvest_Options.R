@@ -1,17 +1,17 @@
 # This script is for setting Harvest options
 
 ## No pinniped removals:
-scenario <- "None"
+# scenario <- "None"
 
 ## Removals on a weekly schedule, days/week
-# scenario <- "Boat"
-# timing = "Weekly"
-# days_per_week <- 7
-# harvest_schedule <- rep(c(rep(0, 7-days_per_week), rep(1, days_per_week)), n_days/7)
-# fear <- "Fear"
-# participation <- 1
-# catchability <- 0.1
-# overlap_pv <- 0.5
+scenario <- "Boat"
+timing = "Weekly"
+days_per_week <- 7
+harvest_schedule <- rep(c(rep(0, 7-days_per_week), rep(1, days_per_week)), n_days/7)
+fear <- "Fear"
+participation <- 1
+catchability <- 0.1
+overlap_pv <- 0.5
 
 ## Removals on a schedule with set gap days between single removal days
 # scenario <- "Boat"
