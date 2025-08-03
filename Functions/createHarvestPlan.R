@@ -8,7 +8,6 @@ createHarvestPlan <- function(scenario = c("None", "Trap", "Boat"), timing, empt
   } else {
     if(timing == "During"){harvest_days <- fishy_days}
     if(timing == "Fishing"){harvest_days <- fishery_dates}
-    if(timing == "Trap During"){harvest_days <- which(trap_days == 1)}
     if(timing == "Weekly"){harvest_days <- which(harvest_schedule == 1)}
     if(timing == "All"){harvest_days <- 1:days}
     
