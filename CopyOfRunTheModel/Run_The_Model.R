@@ -9,30 +9,26 @@ rep <- 1
 
 ## Run it Manually
 
-  
-# case.study <- "Base"
-# run_count <- 1
-# case.study <- "N1"
-# chum_fishery <- FALSE
-case.study <- "B1"
-temps <- "Boring"
-# temps <- "Hot!"
+# Case studies in this version are always Base with 1 salmon run
+case.study <- "Base"
+run_count <- 1
 
-# bounds <- "Made-Up"
-# bounds <- "High Consumption"
-bounds <- "Low Consumption"
+# Set predator consumption values (Cmax) to high (gorging) or 
+# low (diet proportion) bounds
+bounds <- "High Consumption"
+# bounds <- "Low Consumption"
 
-# 01 Set-Up Functions
+# Load Set-Up Functions
 source("Functions/makeArray.R")
 source("Functions/sampleBespoke.R")
 source("Functions/createHarvestPlan.R")
 source("Functions/createSalmonArrival.R")
 
-# 02 Prep Salmon Data
+# Prep Salmon Data
 source("CopyOfRunTheModel/Prep_Bioenergetics.R")
 source("CopyOfRunTheModel/Prep_Salmon_Data.R")
 
-# 03 Prep Pinniped Data
+# Prep Pinniped Data
 source("CopyOfRunTheModel/Prep_Pinniped_Data.R")
 
 # Set Harvest Regime
@@ -49,47 +45,35 @@ scenario <- "None"
 # overlap_pv <- 0.5
 # overlap_sl <- 0.5
 
-# Haulout Reduction?
+# Include Haulout Reduction management?
+# reduction factor = % reduction in total population
 reduction <- 0
 source("Functions/hauloutReduction.R")
 
-# 04 Set Pars
+# Set Parameters
 source("CopyOfRunTheModel/set_pars.R")
 
-# 05 Initialize Variables
-source("CopyOfRunTheModel/initialize_variables_B.R")
+# Initialize Variables
+source("CopyOfRunTheModel/initialize_variables.R")
 
-# 06 Loop Functions
+# Load Loop Functions
 source("CopyOfRunTheModel/loadLoopFunctions.R")
 
-# 07 Run The Loop 
-if(no_seals == F && no_zc == F && no_ej == F){
-  source("Functions/rungeKutta_3.R")
-  source("CopyOfRunTheModel/The_Loop_all.R")
-  source("Functions/Plots_Ej.R")
-  source("Functions/Plots_Zc.R")
-} else if(no_seals == F && no_zc == F && no_ej == T && case.study == "B1"){
-  source("Functions/rungeKutta_2.R")
-  source("CopyOfRunTheModel/The_Loop_pv_zc_B_2.R")
-  source("Functions/Plots_Zc.R")
-} else if(no_seals == F && no_zc == T && no_ej == T){
-  source("Functions/rungeKutta.R")
-  source("CopyOfRunTheModel/The_Loop_pv.R")
-} else {print(error_msg)}
+# Run The Loop 
+source("Functions/rungeKutta.R")
+source("CopyOfRunTheModel/The_Loop_pv.R")
+
 
 # 08 Plots
 source("Functions/Plots_Pv.R")
 source("Functions/Plots_salmon.R")
-# source("Functions/Plots_responses.R")
-
-
 
 
 # Look at the Results
 plot_seals
 plot_H/plot_y/plot_probs/plot_seals + plot_layout(guides = "collect", axis_titles = "collect")
 eaten_sp_plot
-plot_eaten / plot_eaten_zc /plot_eaten_ej + plot_layout(guides = "collect")
+plot_eaten
 salmon_eaten
 
 arrive_plot
