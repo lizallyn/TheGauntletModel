@@ -1,0 +1,7 @@
+Run,CopyCat,Peak_Date,sd,Run_Size,Residence,Fish_Rate,Fishery_Open,Fishery_Close
+Run1,Sockeye,90,8,10000,2,0,85,100
+Run2,Chinook,100,5,1000,15,0,NA,NA
+Run3,Coho,110,3,5000,8,0.01,110,115
+Run4,Chum,120,15,8000,7,0.025,120,130
+Run5,,130,8,3000,8,0,NA,NA
+Run6,,140,12,1000,10,0,NA,NA
