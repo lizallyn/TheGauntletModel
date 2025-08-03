@@ -1,5 +1,6 @@
 # function to create daily arrival counts
 # buffer = how many sd to make the date range encompass whole run
+# requires salmon data to already be read in
 
 create_salmon_arrival <- function(front_buffer, end_buffer, run_info){
   start_date <- min(run_info$Peak_Date) - 
