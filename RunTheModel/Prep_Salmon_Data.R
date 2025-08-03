@@ -13,7 +13,7 @@ if(case.study == "Base"){
   run_group <- run_info[,"CopyCat"]
   
   run_info$Escape <- 1/run_info$Residence
-  sd.end <- max(run_info$Residence) * 4
+  sd.end <- max(run_info$Residence) * 4 #makes sure dataframe is big enough for full run arrive and leave
   
   # create arrival data frame
   salmon_arrival <- create_salmon_arrival(5, sd.end, run_info) # width of days range
@@ -24,18 +24,14 @@ if(case.study == "Base"){
   
   # bioenergetics parameters
   run_kcal <- salmon_kcal[run_group]
+  colnames(run_kcal) <- run_info$Run
   low_mat <- matrix(ncol = 3, nrow = 1, data = low_energetics[,run_group])
   colnames(low_mat) <- c("Pv", "Zc", "Ej")
   rownames(low_mat) <- run_info$Run
-  # high_mat <- matrix(ncol = 3, nrow = 1, data = high_energetics[,run_group])
-  # colnames(high_mat) <- c("Pv", "Zc", "Ej")
-  # rownames(high_mat) <- run_info$Run
   high_mat <- matrix(ncol = 3, nrow = 1, data = high_energetics[,"Base"])
   colnames(high_mat) <- c("Pv", "Zc", "Ej")
   rownames(high_mat) <- "Base"
-  alpha_mat <- alpha_all["Base",] ### Look here! Not flexible !!!
-  colnames(run_kcal) <- run_info$Run
-  # rownames(alpha_mat) <- run_info$Run
+  alpha_mat <- alpha_all["Base",]
   
   # days with boats and days with fish
   boat_days <- array(dim = n_days, data = 0)
@@ -58,8 +54,6 @@ if(case.study == "Base"){
       boat_days[fishery_dates] <- 1
     }
   }
-  
-  sealion_arrival <- 1
   
   min_fishers <- 15
   max_fishers <- 15
