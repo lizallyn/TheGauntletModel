@@ -25,11 +25,11 @@ source("Functions/createHarvestPlan.R")
 source("Functions/createSalmonArrival.R")
 
 # Prep Salmon Data
-source("CopyOfRunTheModel/Prep_Bioenergetics.R")
-source("CopyOfRunTheModel/Prep_Salmon_Data.R")
+source("RunTheModel/Prep_Bioenergetics.R")
+source("RunTheModel/Prep_Salmon_Data.R")
 
 # Prep Pinniped Data
-source("CopyOfRunTheModel/Prep_Pinniped_Data.R")
+source("RunTheModel/Prep_Pinniped_Data.R")
 
 # Set Harvest Regime
 scenario <- "None"
@@ -51,17 +51,17 @@ reduction <- 0
 source("Functions/hauloutReduction.R")
 
 # Set Parameters
-source("CopyOfRunTheModel/set_pars.R")
+source("RunTheModel/set_pars.R")
 
 # Initialize Variables
-source("CopyOfRunTheModel/initialize_variables.R")
+source("RunTheModel/initialize_variables.R")
 
 # Load Loop Functions
-source("CopyOfRunTheModel/loadLoopFunctions.R")
+source("RunTheModel/loadLoopFunctions.R")
 
 # Run The Loop 
 source("Functions/rungeKutta.R")
-source("CopyOfRunTheModel/The_Loop_pv.R")
+source("RunTheModel/The_Loop_pv.R")
 
 
 # 08 Plots
