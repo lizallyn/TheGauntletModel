@@ -31,24 +31,8 @@ source("RunTheModel/Prep_Salmon_Data.R")
 # Prep Pinniped Data
 source("RunTheModel/Prep_Pinniped_Data.R")
 
-# Set Harvest Regime
-scenario <- "None"
-# scenario <- "Trap"
-# scenario <- "Boat"
-# timing <- "During"
-# fear <- "No Fear"
-# min_harvesters <- min_fishers
-# max_harvesters <- max_fishers
-# num_harvesters <- rep(min_harvesters:max_harvesters, n_days, replace = T)
-# participation <- 0.5
-# catchability <- 0.1
-# overlap_pv <- 0.5
-# overlap_sl <- 0.5
-
-# Include Haulout Reduction management?
-# reduction factor = % reduction in total population
-reduction <- 0
-source("Functions/hauloutReduction.R")
+## Set Harvest Regime
+source("RunTheModel/Choose_Harvest_Options.R")
 
 # Set Parameters
 source("RunTheModel/set_pars.R")
