@@ -1,31 +1,30 @@
 ### For creating, storing, editing data on pinniped species
 # Feb 2025
 
-if(case.study == "Base"){
-  # Pinniped input
-  num_seals <- 100
-  num_zc <- 0
-  num_ej <- 0
-  pinnipeds <- data.frame(Pv = num_seals, Zc = num_zc, Ej = num_ej)
-  
-  num_pinn_sp <- length(which(pinnipeds > 0))
-  list_of_pinns <- colnames(pinnipeds[which(pinnipeds > 0)])
-  
-  # num_haulouts <- 2 # for Pv
-  
-  ## Specialist Behavior Prevalence
-  prop_specialists <- 0.3
-  base_x <- 0.01
-  base_x_spec <- 0.1
-  base_x_sl <- 0.25
-  step <- 0.15
-  step_spec <- 0.3
-  decay <- 0.1
-  
-  ## Seasonality
-  sealion_arrival <- 1
 
-}
+# Pinniped input
+num_seals <- 100
+num_zc <- 0
+num_ej <- 0
+pinnipeds <- data.frame(Pv = num_seals, Zc = num_zc, Ej = num_ej)
+
+num_pinn_sp <- length(which(pinnipeds > 0))
+list_of_pinns <- colnames(pinnipeds[which(pinnipeds > 0)])
+
+# num_haulouts <- 2 # for Pv
+
+## Specialist Behavior Prevalence
+prop_specialists <- 0.3
+base_x <- 0.01
+base_x_spec <- 0.1
+base_x_sl <- 0.25
+step <- 0.15
+step_spec <- 0.3
+decay <- 0.1
+
+## Seasonality
+sealion_arrival <- 1
+
 
 
 ## consumption parameters
