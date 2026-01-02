@@ -90,13 +90,9 @@ high_energetics <- ceiling(high_energetics) # need to kill whole fish
 # these are based on avg diet proportions
 
 # in kcal:
-if(case.study == "Base"){
-  w <- data.frame(Pv = Pv_kcal * 0.10)
-} else {
-  w <- data.frame(Pv = Pv_kcal * 0.103, 
-                        Zc = Zc_kcal * 0.131, 
-                        Ej = Ej_kcal * 0.116)
-}
+w <- data.frame(Pv = Pv_kcal * 0.10)
+
+
 
 
 #### Parameter alpha ####
