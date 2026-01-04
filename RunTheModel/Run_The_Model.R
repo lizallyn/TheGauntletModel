@@ -59,7 +59,7 @@ plot_seals
 plot_H/plot_y/plot_probs/plot_seals + plot_layout(guides = "collect", axis_titles = "collect")
 eaten_sp_plot / plot_eaten / plot_x / plot_probs + plot_layout(guides = "collect", axis_titles = "collect")
 plot_probs / plot_Psoc + plot_layout(guides = "collect", axes = "collect")
-
+plot_x/plot_y
 arrive_plot / gauntlet_plot / escape_plot / eaten_sp_plot + plot_layout(guides = "collect", axis_titles = "collect")
 
 salmon_catch
