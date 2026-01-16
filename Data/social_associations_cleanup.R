@@ -114,5 +114,5 @@ hist(long_network$Association)
 num_connections <- length(which(long_network$Association == 1))
 total_nodes <- nrow(long_network)
 fake <- rbinom(1000, 1, num_connections/total_nodes)
-
+hist(fake)
 
